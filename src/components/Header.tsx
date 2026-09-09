@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, MessageCircle, ShieldCheck } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 import { InstagramIcon, FacebookIcon } from './SocialIcons';
 
 interface HeaderProps {
@@ -34,32 +34,31 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
       isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-3' : 'bg-slate-900/90 backdrop-blur-sm py-4 border-b border-slate-800'
     }`}>
       {/* Top Bar Contacts (Desktop only) */}
-      <div className={`hidden lg:block border-b pb-2 mb-2 transition-all duration-300 ${
-        isScrolled ? 'border-gray-100 text-slate-600 text-xs' : 'border-slate-800/80 text-slate-300 text-xs'
+      <div className={`hidden lg:block overflow-hidden border-b text-xs text-slate-400 transition-all duration-300 ${
+        isScrolled
+          ? 'max-h-0 border-transparent pb-0 mb-0 opacity-0 pointer-events-none'
+          : 'max-h-12 border-slate-800/80 pb-2 mb-2 opacity-100'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          <div className="flex items-center space-x-6">
-            <span className="flex items-center gap-1.5 font-medium">
-              <ShieldCheck className="w-4 h-4 text-dhl-yellow" />
-              Agente Autorizado DHL Express em Uberlândia e Região
-            </span>
+          <div className="flex items-center">
             <span className="flex items-center gap-1.5">
-              <Phone className="w-3.5 h-3.5 text-dhl-red" />
+              <Phone className="w-3.5 h-3.5" />
+              Telefone / Atendimento:
               (34) 3233-0000 / (34) 99999-9999
             </span>
           </div>
 
           <div className="flex items-center space-x-4">
             <span className="text-slate-400">Siga a UDI Entregas:</span>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-dhl-yellow transition-colors" aria-label="Instagram">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Instagram">
               <InstagramIcon className="w-4 h-4" />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-dhl-yellow transition-colors" aria-label="Facebook">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Facebook">
               <FacebookIcon className="w-4 h-4" />
             </a>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1 transition-colors">
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white flex items-center gap-1 transition-colors" aria-label="WhatsApp Atendimento">
               <MessageCircle className="w-4 h-4" />
-              WhatsApp Atendimento
+              WhatsApp
             </a>
           </div>
         </div>
@@ -79,7 +78,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
                 Agente Autorizado
               </span>
               <span className="text-xs font-black tracking-widest text-dhl-red flex items-center gap-1">
-                DHL <span className="text-dhl-yellow drop-shadow-sm">EXPRESS</span>
+                DHL <span className={isScrolled ? 'text-red-600' : 'text-dhl-yellow'}>EXPRESS</span>
               </span>
             </div>
           </a>
@@ -90,8 +89,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-semibold tracking-wide transition-colors hover:text-dhl-red ${
-                  isScrolled ? 'text-slate-700' : 'text-slate-200'
+                className={`text-sm font-semibold tracking-wide transition-colors ${
+                  isScrolled ? 'text-slate-800 hover:text-black' : 'text-white hover:text-slate-200'
                 }`}
               >
                 {link.name}
@@ -131,14 +130,20 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-slate-900 text-white border-b border-slate-800 px-4 pt-4 pb-6 space-y-4 animate-in slide-in-from-top duration-200">
+        <div className={`md:hidden border-b px-4 pt-4 pb-6 space-y-4 animate-in slide-in-from-top duration-200 ${
+          isScrolled ? 'bg-white text-slate-800 border-slate-200' : 'bg-slate-900 text-white border-slate-800'
+        }`}>
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-medium text-slate-200 hover:text-dhl-yellow py-2 border-b border-slate-800"
+                className={`text-base font-medium py-2 border-b transition-colors ${
+                  isScrolled
+                    ? 'text-slate-800 hover:text-black border-slate-200'
+                    : 'text-white hover:text-dhl-yellow border-slate-800'
+                }`}
               >
                 {link.name}
               </a>
@@ -156,11 +161,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
               Atendimento WhatsApp
             </a>
 
-            <div className="flex justify-center space-x-6 pt-3 text-slate-400">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-dhl-yellow" aria-label="Instagram">
+            <div className={`flex justify-center space-x-6 pt-3 ${isScrolled ? 'text-slate-500' : 'text-slate-400'}`}>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={isScrolled ? 'hover:text-black' : 'hover:text-white'} aria-label="Instagram">
                 <InstagramIcon className="w-5 h-5" />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-dhl-yellow" aria-label="Facebook">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={isScrolled ? 'hover:text-black' : 'hover:text-white'} aria-label="Facebook">
                 <FacebookIcon className="w-5 h-5" />
               </a>
             </div>
