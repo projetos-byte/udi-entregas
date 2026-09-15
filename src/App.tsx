@@ -20,7 +20,7 @@ export function App() {
     setIsQuoteModalOpen(true);
   };
 
-  const whatsappNumber = '5534999999999';
+  const whatsappNumber = '5534991671026';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá! Gostaria de agendar uma coleta em Uberlândia/Região.')}`;
 
   return (
@@ -65,7 +65,7 @@ export function App() {
                       <Phone className="w-5 h-5 text-dhl-yellow shrink-0" />
                       <div>
                         <strong className="text-white block">Telefones:</strong>
-                        (34) 3233-0000 / (34) 99999-9999
+                        (34) 3213-4702 / (34) 99167-1026
                       </div>
                     </div>
 
@@ -73,7 +73,7 @@ export function App() {
                       <Clock className="w-5 h-5 text-dhl-yellow shrink-0" />
                       <div>
                         <strong className="text-white block">Horário:</strong>
-                        Seg. a Sex. das 08h às 18h
+                        Geral: Seg. a Sex. das 08h às 18h | DHL Express: Seg. a Sex. das 09h às 17h
                       </div>
                     </div>
                   </div>

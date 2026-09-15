@@ -4,7 +4,7 @@ import { InstagramIcon, FacebookIcon } from './SocialIcons';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  const whatsappNumber = '5534999999999';
+  const whatsappNumber = '5534991671026';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá! Vim pelo rodapé do site da UDI Entregas e gostaria de falar sobre um envio.')}`;
 
   return (
@@ -94,12 +94,12 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3 text-xs sm:text-sm text-slate-400">
               <li>
                 <strong className="font-medium text-slate-400">Sede Operacional:</strong><br />
-                Av. Ipanema, Uberlândia - MG<br />
-                <span className="text-xs">Próximo ao Aeroporto de Uberlândia</span>
+                Rua Oril Caetano de Rezende, nº 10<br />
+                Uberlândia - MG | CEP: 38405-365
               </li>
-              <li>(34) 3233-0000 / (34) 99999-9999</li>
-              <li>contato@udientregas.com.br</li>
-              <li>Segunda a Sexta: 08h00 às 18h00</li>
+              <li>(34) 99167-1026 / (34) 3213-4702</li>
+              <li>Geral: Segunda a sexta, 08h às 18h</li>
+              <li>DHL Express: Segunda a sexta, 09h às 17h</li>
             </ul>
           </div>
 
@@ -119,7 +119,7 @@ export const Footer: React.FC = () => {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© {currentYear} UDI Entregas. Todos os direitos reservados.</p>
           <p className="pr-20 text-center sm:text-right">
-            Razão Social: UDI Entregas & Logística Ltda. | CNPJ: 12.345.678/0001-90 | Atuação: Agente Autorizado DHL Express
+            UDI Entregas Urgentes Ltda. | Atuação: Agente Autorizado DHL Express
           </p>
         </div>
 

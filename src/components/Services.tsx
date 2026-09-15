@@ -21,7 +21,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
       title: 'Aéreo Internacional DHL Express',
       badge: 'Global & Expresso',
       icon: Globe,
-      desc: 'Solução líder mundial para envios urgentes de documentos e mercadorias para mais de 220 países e territórios com agilidade imbatível.',
+      desc: 'Solução líder mundial para envios urgentes de documentos, encomendas, mercadorias e cargas de pequenos e grandes volumes para mais de 220 países e territórios.',
       cities: ['América do Norte', 'Europa', 'Ásia & Oceania', 'América Latina & África'],
       features: [
         'Entrega porta a porta com prazo expresso garantido',
@@ -36,7 +36,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
       title: 'Aéreo Nacional',
       badge: 'Velocidade Brasil',
       icon: Plane,
-      desc: 'Transporte aéreo prioritário conectando os principais aeroportos do Brasil para cargas e documentos que não podem esperar.',
+      desc: 'Transporte aéreo prioritário para documentos, encomendas, mercadorias e cargas de pequenos e grandes volumes em todo o Brasil.',
       features: [
         'Conexão direta entre capitais e grandes polos econômicos',
         'Prazos reduzidos para encomendas urgentes',
@@ -51,9 +51,9 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
       badge: 'Frota Regional Destaque',
       icon: Truck,
       desc: 'Coletas e entregas expressas diárias operadas com frota própria em Uberlândia, Uberaba, Araguari, Catalão e toda a região.',
-      cities: ['Uberlândia', 'Uberaba', 'Araguari', 'Catalão', 'Região do Triângulo & Alto Paranaíba'],
+      cities: ['Uberlândia', 'Uberaba', 'Araguari', 'Catalão', 'Patos de Minas', 'Araxá', 'Patrocínio'],
       features: [
-        'Atendimento direto nas principais cidades da região',
+        'Atendimento direto nas principais cidades da região e consulta de outras rotas',
         'Coletas agendadas no mesmo dia no seu endereço',
         'Integração direta com nosso terminal de cargas',
         'Frete rápido, seguro e sem intermediários'

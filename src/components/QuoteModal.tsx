@@ -32,7 +32,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose, initial
       `-----------------------------------\n` +
       `Olá! Gostaria de receber o orçamento deste envio.`;
 
-    const whatsappNumber = '5534999999999';
+    const whatsappNumber = '5534991671026';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     onClose();

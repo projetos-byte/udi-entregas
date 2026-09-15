@@ -39,7 +39,7 @@ export const FAQ: React.FC = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const whatsappNumber = '5534999999999';
+  const whatsappNumber = '5534991671026';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá! Tenho algumas dúvidas sobre os envios e gostaria de falar com um Especialista da UDI Entregas.')}`;
 
   return (

@@ -6,7 +6,7 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
-  const whatsappNumber = '5534999999999';
+  const whatsappNumber = '5534991671026';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá! Vim pelo site da UDI Entregas e preciso cotar um envio urgente.')}`;
 
   return (
@@ -50,7 +50,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl font-normal leading-relaxed">
-              A <strong className="text-white font-semibold">UDI Entregas</strong> oferece acesso direto à maior rede logística expressa do planeta. Soluções aéreas internacionais e nacionais com coleta ágil em Uberlândia e toda a região.
+              A <strong className="text-white font-semibold">UDI Entregas</strong> oferece acesso direto à maior rede logística expressa do planeta. Soluções aéreas nacionais e internacionais para documentos, encomendas, mercadorias e cargas, com coleta ágil em Uberlândia e toda a região, rastreamento em tempo real e suporte especializado em todas as etapas.
             </p>
 
             {/* CTAs */}

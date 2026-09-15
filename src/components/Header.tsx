@@ -26,7 +26,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
     { name: 'Contato', href: '#contact' },
   ];
 
-  const whatsappNumber = '5534999999999';
+  const whatsappNumber = '5534991671026';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá! Gostaria de solicitar uma cotação de envio pela UDI Entregas.')}`;
 
   return (
@@ -44,7 +44,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
             <span className="flex items-center gap-1.5">
               <Phone className="w-3.5 h-3.5" />
               Telefone / Atendimento:
-              (34) 3233-0000 / (34) 99999-9999
+              (34) 3213-4702 / (34) 99167-1026
             </span>
           </div>
 

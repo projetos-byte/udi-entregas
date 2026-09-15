@@ -25,8 +25,13 @@ export const About: React.FC = () => {
     },
     {
       title: 'Terminal 24h',
-      desc: 'Estrutura operacional com recebimento e movimentação contínua para garantir embarques nos primeiros voos do dia.',
+      desc: 'Terminal de cargas com coleta e entrega 24 horas por dia, inclusive aos sábados, domingos e feriados.',
       icon: Clock,
+    },
+    {
+      title: 'Segurança 24h',
+      desc: 'Monitoramento contínuo por câmeras internas e externas, sistema de alarme e vigilância especializada.',
+      icon: ShieldCheck,
     },
   ];
 
@@ -52,11 +57,15 @@ export const About: React.FC = () => {
             </h2>
 
             <p className="text-slate-700 text-base sm:text-lg leading-relaxed">
-              Fundada com o compromisso de conectar Uberlândia e região às principais rotas comerciais do Brasil e do mundo, a <strong className="text-slate-900">UDI Entregas</strong> consolidou-se como referência máxima em agilidade e segurança no transporte de encomendas.
+              Há 30 anos, a <strong className="text-slate-900">UDI Entregas</strong> oferece soluções logísticas com agilidade, segurança e atendimento personalizado, conectando Uberlândia e região às principais rotas comerciais do Brasil e do mundo.
             </p>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               Como <strong className="text-slate-900 font-semibold">Agente Autorizado DHL Express</strong>, contamos com <strong>sede própria estrategicamente localizada em Uberlândia</strong>, a poucos minutos do Aeroporto Ten. Cel. Av. César Bombonato. Essa posição geográfica privilegiada nos permite agilizar o transbordo e garantir o embarque imediato de cargas urgentes.
+            </p>
+
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Mais do que transportar cargas, nossa missão é construir relações de confiança, oferecendo soluções logísticas eficientes para atender às necessidades de cada cliente.
             </p>
 
             {/* Key Metric Highlights */}
@@ -110,7 +119,7 @@ export const About: React.FC = () => {
                 </p>
               </div>
 
-              {/* List of 5 Differentials */}
+              {/* List of differentials */}
               <div className="space-y-6">
                 {differentials.map((item, index) => {
                   const IconComp = item.icon;
