@@ -24,10 +24,10 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
       desc: 'Solução líder mundial para envios urgentes de documentos, encomendas, mercadorias e cargas de pequenos e grandes volumes para mais de 220 países e territórios.',
       cities: ['América do Norte', 'Europa', 'Ásia & Oceania', 'América Latina & África'],
       features: [
-        'Entrega porta a porta com prazo expresso garantido',
+        'Envios rápidos e seguros com suporte especializado em todas as etapas',
         'Desembaraço aduaneiro rápido e assessoria completa em invoices',
         'Rastreamento em tempo real 24/7 ponto a ponto',
-        'Segurança máxima e seguro de transporte opcional'
+        'Segurança e rastreamento em tempo real'
       ],
       details: 'Conectamos sua empresa ou envio pessoal à malha aérea global da DHL Express. Cuidamos de todo o processo burocrático, documentos alfandegários e declarações de exportação/importação para que sua encomenda chegue com segurança em qualquer lugar do mundo.'
     },
@@ -50,15 +50,15 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
       title: 'Transporte Rodoviário Regional',
       badge: 'Frota Regional Destaque',
       icon: Truck,
-      desc: 'Coletas e entregas expressas diárias operadas com frota própria em Uberlândia, Uberaba, Araguari, Catalão e toda a região.',
+      desc: 'Soluções em transporte rodoviário para coletas e entregas em Uberlândia e cidades da região, com atendimento personalizado e alta confiabilidade.',
       cities: ['Uberlândia', 'Uberaba', 'Araguari', 'Catalão', 'Patos de Minas', 'Araxá', 'Patrocínio'],
       features: [
         'Atendimento direto nas principais cidades da região e consulta de outras rotas',
-        'Coletas agendadas no mesmo dia no seu endereço',
+        'Coletas e entregas em rotas regionais',
         'Integração direta com nosso terminal de cargas',
         'Frete rápido, seguro e sem intermediários'
       ],
-      details: 'Operamos uma malha rodoviária regional ágil e eficiente. Nossa frota própria atende o Polo Industrial de Uberlândia, Uberaba, Araguari, Catalão e cidades vizinhas com suporte operacional imediato.'
+      details: 'Oferecemos transporte rodoviário para Uberlândia, Uberaba, Araguari, Catalão, Patos de Minas, Araxá, Patrocínio e outras cidades mediante consulta de disponibilidade.'
     }
   ];
 
@@ -173,10 +173,10 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
               Atendimento Regional Especializado
             </span>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">
-              Coletas Diárias em Uberlândia, Uberaba, Araguari e Catalão
+              Coletas e Entregas em Uberlândia e Região
             </h3>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-              Nossa equipe operacional está presente nos principais polos industriais e comerciais da região. Agende a coleta da sua encomenda na sua empresa ou residência sem burocracia.
+              Atendemos Uberlândia, Uberaba, Araguari, Catalão, Patos de Minas, Araxá e Patrocínio. Consulte nossa equipe sobre a disponibilidade para outras cidades.
             </p>
             <button
               onClick={() => onSelectService('Transporte Rodoviário Regional')}

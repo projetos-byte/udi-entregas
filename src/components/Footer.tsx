@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
                 <MessageCircle className="w-5 h-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/udientregasurgentes"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-slate-900 hover:bg-dhl-red text-slate-400 hover:text-white rounded-xl flex items-center justify-center border border-slate-800 transition-colors"
@@ -109,7 +109,7 @@ export const Footer: React.FC = () => {
               Localização & Cobertura
             </h4>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Base operacional em <strong>Uberlândia - MG</strong>, atendendo com frota regional e coletas diretas em <strong>Uberaba, Araguari, Catalão</strong> e todo o Triângulo Mineiro.
+              Base operacional em <strong>Uberlândia - MG</strong>, atendendo com coletas e entregas em <strong>Uberaba, Araguari, Catalão, Patos de Minas, Araxá e Patrocínio</strong>. Consulte outras rotas.
             </p>
           </div>
 

@@ -59,6 +59,17 @@ export function App() {
                   <p className="text-slate-300 text-base leading-relaxed">
                     Visite nossa loja própria em Uberlândia ou agende a coleta no seu endereço empresarial ou residencial com atendimento humanizado.
                   </p>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    Rua Oril Caetano de Rezende, nº 10, Uberlândia - MG, CEP 38405-365
+                  </p>
+                  <a
+                    href="https://share.google/baG6ImguZI3b971HrK"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex text-sm font-bold text-dhl-yellow hover:text-white transition-colors"
+                  >
+                    Ver localização no Google Maps
+                  </a>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-300 pt-2">
                     <div className="flex items-center gap-2.5 bg-slate-800/80 p-3.5 rounded-xl border border-slate-700">

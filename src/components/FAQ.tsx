@@ -27,7 +27,7 @@ export const FAQ: React.FC = () => {
     },
     {
       question: 'Quais cidades possuem atendimento rodoviário regional direto?',
-      answer: 'Nossa frota dedicada realiza coletas e entregas diárias diretas nas cidades de Uberlândia, Uberaba, Araguari, Catalão e em todo o entorno do Triângulo Mineiro e Alto Paranaíba.'
+      answer: 'Realizamos coletas e entregas em Uberlândia, Uberaba, Araguari, Catalão, Patos de Minas, Araxá e Patrocínio. Consulte nossa equipe sobre a disponibilidade para outras cidades.'
     },
     {
       question: 'Vocês auxiliam com a documentação alfandegária (Invoices e faturas)?',

@@ -50,7 +50,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
 
           <div className="flex items-center space-x-4">
             <span className="text-slate-400">Siga a UDI Entregas:</span>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Instagram">
+            <a href="https://instagram.com/udientregasurgentes" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Instagram">
               <InstagramIcon className="w-4 h-4" />
             </a>
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Facebook">
@@ -162,7 +162,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
             </a>
 
             <div className={`flex justify-center space-x-6 pt-3 ${isScrolled ? 'text-slate-500' : 'text-slate-400'}`}>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={isScrolled ? 'hover:text-black' : 'hover:text-white'} aria-label="Instagram">
+              <a href="https://instagram.com/udientregasurgentes" target="_blank" rel="noopener noreferrer" className={isScrolled ? 'hover:text-black' : 'hover:text-white'} aria-label="Instagram">
                 <InstagramIcon className="w-5 h-5" />
               </a>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={isScrolled ? 'hover:text-black' : 'hover:text-white'} aria-label="Facebook">
