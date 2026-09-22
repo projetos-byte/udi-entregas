@@ -1,66 +1,13 @@
-import React, { useState } from 'react';
-import { Globe, Plane, Truck, ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import React from 'react';
+import { Plane, Truck, MapPin, Sparkles, MessageCircle } from 'lucide-react';
 
 interface ServicesProps {
   onSelectService: (serviceName: string) => void;
 }
 
 export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
-  const [activeModalService, setActiveModalService] = useState<null | {
-    title: string;
-    icon: any;
-    desc: string;
-    cities?: string[];
-    features: string[];
-    details: string;
-  }>(null);
-
-  const servicesData = [
-    {
-      id: 'internacional',
-      title: 'Aéreo Internacional DHL Express',
-      badge: 'Global & Expresso',
-      icon: Globe,
-      desc: 'Solução líder mundial para envios urgentes de documentos, encomendas, mercadorias e cargas de pequenos e grandes volumes para mais de 220 países e territórios.',
-      cities: ['América do Norte', 'Europa', 'Ásia & Oceania', 'América Latina & África'],
-      features: [
-        'Envios rápidos e seguros com suporte especializado em todas as etapas',
-        'Desembaraço aduaneiro rápido e assessoria completa em invoices',
-        'Rastreamento em tempo real 24/7 ponto a ponto',
-        'Segurança e rastreamento em tempo real'
-      ],
-      details: 'Conectamos sua empresa ou envio pessoal à malha aérea global da DHL Express. Cuidamos de todo o processo burocrático, documentos alfandegários e declarações de exportação/importação para que sua encomenda chegue com segurança em qualquer lugar do mundo.'
-    },
-    {
-      id: 'nacional',
-      title: 'Aéreo Nacional',
-      badge: 'Velocidade Brasil',
-      icon: Plane,
-      desc: 'Transporte aéreo prioritário para documentos, encomendas, mercadorias e cargas de pequenos e grandes volumes em todo o Brasil.',
-      features: [
-        'Conexão direta entre capitais e grandes polos econômicos',
-        'Prazos reduzidos para encomendas urgentes',
-        'Monitoramento constante da carga do despacho à entrega',
-        'Opções flexíveis para volumes variados'
-      ],
-      details: 'O serviço de Aéreo Nacional da UDI Entregas atende demandas corporativas e individuais urgentes no território brasileiro. Garantimos agilidade no embarque e tratamento prioritário para suas encomendas mais críticas.'
-    },
-    {
-      id: 'rodoviario',
-      title: 'Transporte Rodoviário Regional',
-      badge: 'Frota Regional Destaque',
-      icon: Truck,
-      desc: 'Soluções em transporte rodoviário para coletas e entregas em Uberlândia e cidades da região, com atendimento personalizado e alta confiabilidade.',
-      cities: ['Uberlândia', 'Uberaba', 'Araguari', 'Catalão', 'Patos de Minas', 'Araxá', 'Patrocínio'],
-      features: [
-        'Atendimento direto nas principais cidades da região e consulta de outras rotas',
-        'Coletas e entregas em rotas regionais',
-        'Integração direta com nosso terminal de cargas',
-        'Frete rápido, seguro e sem intermediários'
-      ],
-      details: 'Oferecemos transporte rodoviário para Uberlândia, Uberaba, Araguari, Catalão, Patos de Minas, Araxá, Patrocínio e outras cidades mediante consulta de disponibilidade.'
-    }
-  ];
+  const whatsappNumber = '5534991671026';
+  const whatsappPickupUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá! Gostaria de agendar uma coleta no meu endereço em Uberlândia/Região.')}`;
 
   return (
     <section id="services" className="py-24 bg-slate-50 relative">
@@ -80,174 +27,136 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
           </p>
         </div>
 
-        {/* Services Grid (3 Cards) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {servicesData.map((service) => {
-            const IconComponent = service.icon;
-            return (
-              <div
-                key={service.id}
-                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-slate-200/80 hover:border-dhl-yellow transition-all duration-300 flex flex-col justify-between group relative overflow-hidden transform hover:-translate-y-1"
-              >
-                {/* Top Decorative Banner */}
-                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-dhl-red via-dhl-yellow to-dhl-red opacity-0 group-hover:opacity-100 transition-opacity"></div>
-
-                <div>
-                  {/* Badge & Icon */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 bg-red-50 text-dhl-red rounded-2xl flex items-center justify-center border border-red-100 group-hover:bg-dhl-red group-hover:text-white transition-colors duration-300 shadow-sm">
-                      <IconComponent className="w-7 h-7" />
-                    </div>
-                    <span className="text-xs font-extrabold text-slate-700 bg-slate-100 px-3 py-1 rounded-full uppercase tracking-wider border border-slate-200">
-                      {service.badge}
-                    </span>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-dhl-red transition-colors">
-                    {service.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                    {service.desc}
-                  </p>
-
-                  {/* Regional Cities Tag if available */}
-                  {service.cities && (
-                    <div className="mb-6 bg-amber-50/80 border border-amber-200/60 rounded-xl p-3.5">
-                      <span className="text-xs font-bold text-amber-900 uppercase block mb-1.5">
-                        Área de Cobertura Principal:
-                      </span>
-                      <div className="flex flex-wrap gap-1.5">
-                        {service.cities.map((city, idx) => (
-                          <span key={idx} className="text-xs font-semibold text-slate-700 bg-white px-2 py-0.5 rounded border border-amber-200">
-                            {city}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Key Features List */}
-                  <ul className="space-y-2.5 mb-8 text-xs sm:text-sm text-slate-700">
-                    {service.features.map((feat, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-dhl-red shrink-0 mt-0.5" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
+        {/* 2 Main Blocks / Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+          
+          {/* Bloco 1: Aéreo DHL */}
+          <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200/80 hover:border-[#FFCC00] transition-all duration-300 flex flex-col justify-between group">
+            {/* Visual Cover */}
+            <div className="relative h-60 w-full overflow-hidden bg-slate-950">
+              <img
+                src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1000&q=80"
+                alt="Envios Aéreos Nacionais e Internacionais DHL Express"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+              
+              <div className="absolute bottom-5 left-6 right-6 flex items-center gap-3">
+                <div className="w-12 h-12 bg-dhl-red text-white rounded-2xl flex items-center justify-center shadow-lg shrink-0">
+                  <Plane className="w-6 h-6" />
                 </div>
-
-                {/* Actions */}
-                <div className="space-y-2.5 pt-4 border-t border-slate-100">
-                  <button
-                    onClick={() => setActiveModalService(service)}
-                    className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-xl transition-colors text-sm flex items-center justify-center gap-2 group-hover:bg-dhl-red"
-                  >
-                    <span>Saiba Mais</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-
-                  <button
-                    onClick={() => onSelectService(service.title)}
-                    className="w-full bg-dhl-yellow hover:bg-dhl-yellow-hover text-slate-950 font-bold py-2.5 rounded-xl transition-colors text-sm flex items-center justify-center gap-1.5 shadow-sm"
-                  >
-                    Cotar Este Serviço
-                  </button>
-                </div>
-
+                <span className="text-xs font-bold uppercase tracking-wider text-[#FFCC00]">
+                  Rede Global DHL Express
+                </span>
               </div>
-            );
-          })}
+            </div>
+
+            {/* Content Body */}
+            <div className="p-8 sm:p-10 flex-1 flex flex-col justify-between space-y-6">
+              <div className="space-y-4">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
+                  Envios Aéreos Nacionais e Internacionais – DHL Express
+                </h3>
+                
+                <p className="text-slate-600 text-base leading-relaxed font-normal">
+                  Como Agente Autorizado DHL Express, oferecemos soluções completas para o transporte aéreo de documentos, encomendas, mercadorias e cargas de pequenos e grandes volumes, com envios para todo o Brasil e mais de 220 países e territórios. Conte com uma das maiores redes logísticas do mundo para realizar seus envios com rapidez, rastreamento em tempo real, segurança e atendimento especializado em todas as etapas do processo.
+                </p>
+              </div>
+
+              {/* Single CTA Button */}
+              <div className="pt-4 border-t border-slate-100">
+                <button
+                  onClick={() => onSelectService('Envios Aéreos Nacionais e Internacionais – DHL Express')}
+                  className="w-full bg-[#FFCC00] hover:bg-[#E6B800] text-slate-950 font-extrabold py-4 px-6 rounded-xl transition-all text-center text-base sm:text-lg shadow-md hover:shadow-lg flex items-center justify-center gap-2 border-b-2 border-amber-600"
+                >
+                  <span>Solicitar Cotação</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Bloco 2: Rodoviário Regional */}
+          <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200/80 hover:border-[#FFCC00] transition-all duration-300 flex flex-col justify-between group">
+            {/* Visual Cover */}
+            <div className="relative h-60 w-full overflow-hidden bg-slate-950">
+              <img
+                src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1000&q=80"
+                alt="Entregas Rodoviárias em Uberlândia e Região"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+              
+              <div className="absolute bottom-5 left-6 right-6 flex items-center gap-3">
+                <div className="w-12 h-12 bg-slate-900 text-[#FFCC00] border border-slate-700 rounded-2xl flex items-center justify-center shadow-lg shrink-0">
+                  <Truck className="w-6 h-6" />
+                </div>
+                <span className="text-xs font-bold uppercase tracking-wider text-[#FFCC00]">
+                  Frota e Logística Regional
+                </span>
+              </div>
+            </div>
+
+            {/* Content Body */}
+            <div className="p-8 sm:p-10 flex-1 flex flex-col justify-between space-y-6">
+              <div className="space-y-4">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
+                  Entregas Rodoviárias em Uberlândia e Região
+                </h3>
+                
+                <p className="text-slate-600 text-base leading-relaxed font-normal">
+                  Oferecemos soluções em transporte rodoviário para coletas e entregas em Uberlândia e diversas cidades da região, como Uberaba, Araguari, Catalão, Patos de Minas, Araxá e Patrocínio. Com uma equipe qualificada e uma logística eficiente, realizamos entregas rápidas, seguras e pontuais, atendendo empresas e pessoas físicas com um serviço personalizado e de alta confiabilidade.
+                </p>
+              </div>
+
+              {/* Single CTA Button */}
+              <div className="pt-4 border-t border-slate-100">
+                <button
+                  onClick={() => onSelectService('Entregas Rodoviárias em Uberlândia e Região')}
+                  className="w-full bg-[#FFCC00] hover:bg-[#E6B800] text-slate-950 font-extrabold py-4 px-6 rounded-xl transition-all text-center text-base sm:text-lg shadow-md hover:shadow-lg flex items-center justify-center gap-2 border-b-2 border-amber-600"
+                >
+                  <span>Solicitar Cotação</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        {/* Regional Focus Banner */}
-        <div className="mt-16 bg-slate-900 text-white rounded-2xl p-8 sm:p-10 shadow-xl relative overflow-hidden border border-slate-800">
-          <div className="absolute -right-10 -bottom-10 opacity-10 pointer-events-none">
+        {/* Bottom Dark Banner - Coleta no seu endereço */}
+        <div className="mt-16 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden border border-slate-800">
+          <div className="absolute -right-12 -bottom-12 opacity-5 pointer-events-none">
             <Truck className="w-96 h-96 text-white" />
           </div>
-          <div className="relative z-10 max-w-3xl">
-            <span className="text-dhl-yellow text-xs font-extrabold tracking-widest uppercase mb-2 block">
-              Atendimento Regional Especializado
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">
-              Coletas e Entregas em Uberlândia e Região
+          
+          <div className="relative z-10 max-w-4xl space-y-6">
+            <div className="inline-flex items-center gap-2 bg-[#FFCC00]/10 border border-[#FFCC00]/20 rounded-full px-4 py-1.5 text-[#FFCC00] text-xs sm:text-sm font-bold uppercase tracking-wider">
+              <MapPin className="w-4 h-4 text-[#FFCC00]" />
+              Comodidade e Agilidade
+            </div>
+
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+              Coleta no seu endereço
             </h3>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-              Atendemos Uberlândia, Uberaba, Araguari, Catalão, Patos de Minas, Araxá e Patrocínio. Consulte nossa equipe sobre a disponibilidade para outras cidades.
+
+            <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl">
+              Para maior comodidade, realizamos a coleta em seu endereço nas cidades de Uberlândia, Uberaba, Araguari e Catalão, garantindo um processo ágil e seguro desde a origem até o destino. Atendemos diversas rotas regionais. Consulte nossa equipe sobre a disponibilidade para outras cidades.
             </p>
-            <button
-              onClick={() => onSelectService('Transporte Rodoviário Regional')}
-              className="bg-dhl-yellow hover:bg-dhl-yellow-hover text-slate-950 font-extrabold px-6 py-3 rounded-xl transition-all shadow-lg text-sm inline-flex items-center gap-2"
-            >
-              Agendar Coleta na Região
-              <ArrowRight className="w-4 h-4" />
-            </button>
+
+            <div className="pt-2">
+              <a
+                href={whatsappPickupUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-[#FFCC00] hover:bg-[#E6B800] text-slate-950 font-extrabold px-8 py-4 rounded-xl shadow-xl hover:shadow-[#FFCC00]/20 transition-all text-base sm:text-lg transform hover:-translate-y-0.5 border-b-4 border-amber-600"
+              >
+                <MessageCircle className="w-5 h-5 fill-slate-950 text-[#FFCC00]" />
+                <span>Agendar Coleta</span>
+              </a>
+            </div>
           </div>
         </div>
 
       </div>
-
-      {/* Service Detail Modal */}
-      {activeModalService && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative border border-slate-200">
-            <button
-              onClick={() => setActiveModalService(null)}
-              className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 bg-slate-100 p-2 rounded-full transition-colors"
-            >
-              ✕
-            </button>
-
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-dhl-red text-white rounded-xl flex items-center justify-center">
-                <activeModalService.icon className="w-6 h-6" />
-              </div>
-              <div>
-                <span className="text-xs font-bold text-dhl-red uppercase tracking-wider">Detalhes do Serviço</span>
-                <h3 className="text-xl font-bold text-slate-900">{activeModalService.title}</h3>
-              </div>
-            </div>
-
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
-              {activeModalService.details}
-            </p>
-
-            <div className="bg-slate-50 rounded-xl p-4 mb-6 border border-slate-200">
-              <h4 className="font-bold text-slate-900 text-sm mb-3">Vantagens Exclusivas UDI Entregas:</h4>
-              <ul className="space-y-2 text-sm text-slate-700">
-                {activeModalService.features.map((f, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-dhl-red" />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <button
-                onClick={() => {
-                  const title = activeModalService.title;
-                  setActiveModalService(null);
-                  onSelectService(title);
-                }}
-                className="flex-1 bg-dhl-yellow hover:bg-dhl-yellow-hover text-slate-950 font-extrabold py-3 rounded-xl transition-colors text-center text-sm shadow-md"
-              >
-                Solicitar Cotação Agora
-              </button>
-              <button
-                onClick={() => setActiveModalService(null)}
-                className="px-6 py-3 bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold rounded-xl text-sm transition-colors"
-              >
-                Fechar
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, MessageCircle } from 'lucide-react';
-import { InstagramIcon, FacebookIcon } from './SocialIcons';
+import { InstagramIcon } from './SocialIcons';
 
 interface HeaderProps {
   onOpenQuoteModal: () => void;
@@ -49,29 +49,30 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
           </div>
 
           <div className="flex items-center space-x-4">
-            <span className="text-slate-400">Siga a UDI Entregas:</span>
-            <a href="https://instagram.com/udientregasurgentes" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Instagram">
-              <InstagramIcon className="w-4 h-4" />
+            <a href="https://instagram.com/udientregasurgentes" target="_blank" rel="noopener noreferrer" className="hover:text-white flex items-center gap-1.5 transition-colors" aria-label="Instagram">
+              <InstagramIcon className="w-4 h-4 text-pink-400" />
+              <span>Instagram</span>
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Facebook">
-              <FacebookIcon className="w-4 h-4" />
-            </a>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white flex items-center gap-1 transition-colors" aria-label="WhatsApp Atendimento">
-              <MessageCircle className="w-4 h-4" />
-              WhatsApp
+            <span className="text-slate-700">•</span>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white flex items-center gap-1.5 transition-colors" aria-label="WhatsApp Atendimento">
+              <MessageCircle className="w-4 h-4 text-emerald-400" />
+              <span>WhatsApp</span>
             </a>
           </div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+        <div className="relative flex items-center justify-between">
           
           {/* Logo Brand */}
-          <a href="#home" className="flex items-center gap-3 group">
-            <div className="bg-dhl-yellow text-slate-950 font-black tracking-tighter text-xl sm:text-2xl px-3 py-1.5 rounded-lg shadow-md border-b-2 border-dhl-yellow-hover flex items-center gap-1.5">
-              <span>UDI</span>
-              <span className="bg-dhl-red text-white text-xs px-2 py-0.5 rounded font-extrabold tracking-widest uppercase">ENTREGAS</span>
+          <a href="#home" className="flex items-center gap-3 group focus:outline-none" aria-label="UDI Entregas - Início">
+            <div className="bg-[#FFCC00] px-2.5 py-1 rounded-xl shadow-md border border-amber-400/40 flex items-center justify-center transition-transform group-hover:scale-105">
+              <img
+                src="/logo-udi-entregas.png"
+                alt="UDI Entregas Urgente - O seu agente de cargas em Uberlândia e região"
+                className="h-8 sm:h-10 w-auto object-contain"
+              />
             </div>
             <div className="hidden sm:flex flex-col">
               <span className={`text-xs font-bold tracking-wider uppercase ${isScrolled ? 'text-slate-900' : 'text-white'}`}>
@@ -83,8 +84,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
             </div>
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Centered */}
+          <nav className="hidden md:flex items-center space-x-8 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -98,13 +99,16 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
             ))}
           </nav>
 
-          {/* CTA & Actions Header */}
+          {/* CTA & Actions Header - Minimized to focus on Hero CTA */}
           <div className="hidden md:flex items-center space-x-4">
             <button
               onClick={onOpenQuoteModal}
-              className="bg-dhl-yellow hover:bg-dhl-yellow-hover text-slate-950 font-bold px-5 py-2.5 rounded-xl shadow-lg hover:shadow-dhl-yellow/30 transition-all transform hover:-translate-y-0.5 text-sm flex items-center gap-2"
+              className={`font-semibold px-4 py-2 rounded-xl text-sm transition-all border ${
+                isScrolled
+                  ? 'border-slate-300 text-slate-800 hover:border-slate-800 hover:bg-slate-50'
+                  : 'border-slate-700 bg-slate-800/50 text-slate-200 hover:border-slate-500 hover:text-white hover:bg-slate-800'
+              }`}
             >
-              <MessageCircle className="w-4 h-4 fill-slate-950 text-dhl-yellow" />
               Solicitar Cotação
             </button>
           </div>
@@ -113,7 +117,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
           <div className="flex md:hidden items-center space-x-3">
             <button
               onClick={onOpenQuoteModal}
-              className="bg-dhl-yellow text-slate-950 font-bold px-3 py-1.5 rounded-lg text-xs flex items-center gap-1"
+              className={`font-semibold px-3 py-1.5 rounded-lg text-xs border ${
+                isScrolled
+                  ? 'border-slate-300 text-slate-800'
+                  : 'border-slate-700 bg-slate-800/60 text-slate-200'
+              }`}
             >
               Cotação
             </button>
@@ -161,12 +169,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
               Atendimento WhatsApp
             </a>
 
-            <div className={`flex justify-center space-x-6 pt-3 ${isScrolled ? 'text-slate-500' : 'text-slate-400'}`}>
-              <a href="https://instagram.com/udientregasurgentes" target="_blank" rel="noopener noreferrer" className={isScrolled ? 'hover:text-black' : 'hover:text-white'} aria-label="Instagram">
-                <InstagramIcon className="w-5 h-5" />
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={isScrolled ? 'hover:text-black' : 'hover:text-white'} aria-label="Facebook">
-                <FacebookIcon className="w-5 h-5" />
+            <div className={`flex justify-center pt-3 ${isScrolled ? 'text-slate-500' : 'text-slate-400'}`}>
+              <a href="https://instagram.com/udientregasurgentes" target="_blank" rel="noopener noreferrer" className={`flex items-center gap-2 text-sm font-medium ${isScrolled ? 'hover:text-black' : 'hover:text-white'}`} aria-label="Instagram">
+                <InstagramIcon className="w-5 h-5 text-pink-400" />
+                <span>@udientregasurgentes</span>
               </a>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
-import { InstagramIcon, FacebookIcon } from './SocialIcons';
+import { InstagramIcon } from './SocialIcons';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -20,11 +20,13 @@ export const Footer: React.FC = () => {
           
           {/* Column 1: Brand & About */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="-mt-1 bg-dhl-yellow text-slate-950 font-black tracking-tighter text-xl px-3 py-1 rounded-lg border-b-2 border-dhl-yellow-hover">
-                UDI <span className="text-dhl-red">ENTREGAS</span>
-              </div>
-            </div>
+            <a href="#home" className="inline-block bg-[#FFCC00] px-3 py-1.5 rounded-xl shadow-md border border-amber-400/40 hover:opacity-90 transition-opacity" aria-label="Voltar ao início">
+              <img
+                src="/logo-udi-entregas.png"
+                alt="UDI Entregas Urgente"
+                className="h-9 w-auto object-contain"
+              />
+            </a>
 
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
               Há mais de 30 anos oferecendo soluções completas de logística expressa nacional e internacional com sede própria estratégica em Uberlândia.
@@ -36,28 +38,19 @@ export const Footer: React.FC = () => {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 bg-slate-900 hover:bg-emerald-600 text-emerald-400 hover:text-white rounded-xl flex items-center justify-center border border-slate-800 transition-colors"
+                className="w-10 h-10 bg-slate-900 hover:bg-emerald-600 text-emerald-400 hover:text-white rounded-xl flex items-center justify-center border border-slate-800 transition-all shadow-sm group"
                 aria-label="WhatsApp"
               >
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle className="w-5 h-5 transition-transform group-hover:scale-110" />
               </a>
               <a
                 href="https://instagram.com/udientregasurgentes"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 bg-slate-900 hover:bg-dhl-red text-slate-400 hover:text-white rounded-xl flex items-center justify-center border border-slate-800 transition-colors"
+                className="w-10 h-10 bg-slate-900 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-rose-500 hover:to-purple-600 text-slate-400 hover:text-white rounded-xl flex items-center justify-center border border-slate-800 transition-all shadow-sm group"
                 aria-label="Instagram"
               >
-                <InstagramIcon className="w-5 h-5" />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 bg-slate-900 hover:bg-blue-600 text-slate-400 hover:text-white rounded-xl flex items-center justify-center border border-slate-800 transition-colors"
-                aria-label="Facebook"
-              >
-                <FacebookIcon className="w-5 h-5" />
+                <InstagramIcon className="w-5 h-5 transition-transform group-hover:scale-110" />
               </a>
             </div>
           </div>

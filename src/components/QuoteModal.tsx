@@ -79,9 +79,9 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose, initial
               onChange={(e) => setServiceType(e.target.value)}
               className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm font-medium text-slate-900 focus:ring-2 focus:ring-dhl-yellow focus:border-dhl-yellow outline-none"
             >
-              <option value="Aéreo Internacional DHL Express">Aéreo Internacional DHL Express (+220 países)</option>
-              <option value="Aéreo Nacional">Aéreo Nacional (Brasil Expresso)</option>
-              <option value="Transporte Rodoviário Regional">Transporte Rodoviário Regional (Uberlândia/Região)</option>
+              <option value="Envios Aéreos Nacionais e Internacionais – DHL Express">Envios Aéreos Nacionais e Internacionais – DHL Express</option>
+              <option value="Entregas Rodoviárias em Uberlândia e Região">Entregas Rodoviárias em Uberlândia e Região</option>
+              <option value="Coleta no Endereço (Uberlândia e Região)">Coleta no Endereço (Uberlândia e Região)</option>
             </select>
           </div>
 

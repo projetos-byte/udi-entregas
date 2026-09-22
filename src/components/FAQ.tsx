@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ChevronDown, HelpCircle, MessageCircle, Headphones, CheckCircle2 } from 'lucide-react';
 
 export const FAQ: React.FC = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0); // First open by default
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqList = [
     {
