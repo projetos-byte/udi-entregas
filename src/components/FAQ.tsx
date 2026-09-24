@@ -6,32 +6,24 @@ export const FAQ: React.FC = () => {
 
   const faqList = [
     {
-      question: 'Quais tipos de envios posso realizar com a UDI Entregas?',
-      answer: 'Realizamos envios de documentos urgentes (contratos, relatórios, passaportes), amostras comerciais, peças industriais, produtos eletrônicos e encomendas de consumo. Atendemos tanto envios esporádicos quanto operações corporativas de alto volume.'
+      question: 'Quais tipos de envios a UDI Entregas realiza?',
+      answer: 'Realizamos envios nacionais e internacionais de documentos, encomendas, mercadorias e cargas de pequenos e grandes volumes por meio da DHL Express. Também oferecemos serviços de transporte rodoviário em Uberlândia e cidades da região.'
     },
     {
-      question: 'Quais países são atendidos pelo serviço internacional?',
-      answer: 'Como Agente Autorizado DHL Express, cobrimos mais de 220 países e territórios no mundo inteiro. Isso inclui América do Norte, Europa, Ásia, Oceania, África e América Latina, com prazos expressos de entrega porta a porta.'
+      question: 'Para quais países vocês realizam envios?',
+      answer: 'Realizamos envios para mais de 220 países e territórios por meio da DHL Express. Caso tenha dúvidas sobre o destino da sua remessa ou condições de envio, entre em contato com um de nossos especialistas. Nossa equipe terá o prazer em orientá-lo.'
     },
     {
-      question: 'Como funciona o processo de cotação de frete?',
-      answer: 'A cotação é super rápida! Basta nos enviar via WhatsApp ou formulário: o CEP ou cidade/país de origem e destino, o tipo de item (documento ou mercadoria), peso aproximado e as dimensões da caixa (comprimento x largura x altura). Nossa equipe envia o valor na hora.'
+      question: 'Como faço uma cotação?',
+      answer: 'É simples! Basta entrar em contato pelo WhatsApp ou pelos nossos canais de atendimento, informando a origem, o destino, o peso e as dimensões da remessa. Nossa equipe retornará com a melhor opção de envio.'
     },
     {
-      question: 'Pessoa Física (PF) e Pessoa Jurídica (PJ) podem enviar?',
-      answer: 'Sim! Atendemos tanto Pessoas Físicas que precisam enviar documentos ou presentes para o exterior/Brasil, quanto empresas (PJ) de todos os portes com emissão de Nota Fiscal e faturamento corporativo.'
+      question: 'Posso acompanhar meu envio?',
+      answer: 'Sim. Todos os envios realizados pela DHL Express contam com rastreamento em tempo real, permitindo acompanhar a entrega durante todo o trajeto.'
     },
     {
-      question: 'Como posso rastrear minha encomenda?',
-      answer: 'Ao despachar sua carga com a UDI Entregas, você recebe um código de rastreamento exclusivo (Waybill). Com ele, você acompanha cada movimentação em tempo real direto pelo site ou pelo nosso canal de atendimento WhatsApp.'
-    },
-    {
-      question: 'Quais cidades possuem atendimento rodoviário regional direto?',
-      answer: 'Realizamos coletas e entregas em Uberlândia, Uberaba, Araguari, Catalão, Patos de Minas, Araxá e Patrocínio. Consulte nossa equipe sobre a disponibilidade para outras cidades.'
-    },
-    {
-      question: 'Vocês auxiliam com a documentação alfandegária (Invoices e faturas)?',
-      answer: 'Com certeza! Esse é um dos nossos maiores diferenciais. Nossa assessoria especializada orienta você passo a passo no preenchimento da Commercial Invoice (fatura comercial), declarações e documentos necessários para que a encomenda passe rapidamente pela alfândega sem retenções.'
+      question: 'Vocês atendem empresas e pessoas físicas?',
+      answer: 'Sim. Nossos serviços são destinados tanto para empresas quanto para pessoas físicas, sempre com atendimento personalizado.'
     }
   ];
 
