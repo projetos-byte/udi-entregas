@@ -56,7 +56,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="space-y-4">
+          <div className="space-y-4 text-center md:text-left">
             <h4 className="text-white font-semibold text-base tracking-wide leading-none">
               Links Rápidos
             </h4>
@@ -80,7 +80,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Column 3: Contact & Attendance */}
-          <div className="space-y-4">
+          <div className="space-y-4 text-center md:text-left">
             <h4 className="text-white font-semibold text-base tracking-wide leading-none">
               Contatos & Atendimento
             </h4>
@@ -97,7 +97,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Column 4: Location & Legal */}
-          <div className="space-y-4">
+          <div className="space-y-4 text-center md:text-left">
             <h4 className="text-white font-semibold text-base tracking-wide leading-none">
               Localização & Cobertura
             </h4>

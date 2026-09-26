@@ -40,12 +40,26 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
           : 'max-h-12 border-slate-800/80 pb-2 mb-2 opacity-100'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          <div className="flex items-center">
-            <span className="flex items-center gap-1.5">
-              <Phone className="w-3.5 h-3.5" />
-              Telefone / Atendimento:
-              (34) 3213-4702 / (34) 99167-1026
+          <div className="flex items-center gap-2">
+            <span className="flex items-center gap-1.5 text-slate-400">
+              <Phone className="w-3.5 h-3.5 text-dhl-yellow" />
+              <span>Telefone / Atendimento:</span>
             </span>
+            <a
+              href="tel:+553432134702"
+              title="Ligar para (34) 3213-4702"
+              className="text-slate-300 hover:text-dhl-yellow hover:underline transition-colors font-medium"
+            >
+              (34) 3213-4702
+            </a>
+            <span className="text-slate-600">/</span>
+            <a
+              href="tel:+5534991671026"
+              title="Ligar para (34) 99167-1026"
+              className="text-slate-300 hover:text-dhl-yellow hover:underline transition-colors font-medium"
+            >
+              (34) 99167-1026
+            </a>
           </div>
 
           <div className="flex items-center space-x-4">
@@ -169,7 +183,22 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
               Atendimento WhatsApp
             </a>
 
-            <div className={`flex justify-center pt-3 ${isScrolled ? 'text-slate-500' : 'text-slate-400'}`}>
+            <div className={`flex flex-col items-center gap-1.5 pt-3 border-t ${isScrolled ? 'border-slate-200 text-slate-600' : 'border-slate-800 text-slate-400'}`}>
+              <span className="text-xs font-medium flex items-center gap-1">
+                <Phone className="w-3.5 h-3.5 text-dhl-yellow" /> Ligue para nós:
+              </span>
+              <div className="flex items-center gap-3 text-sm font-bold">
+                <a href="tel:+553432134702" className="hover:text-dhl-yellow hover:underline transition-colors">
+                  (34) 3213-4702
+                </a>
+                <span>•</span>
+                <a href="tel:+5534991671026" className="hover:text-dhl-yellow hover:underline transition-colors">
+                  (34) 99167-1026
+                </a>
+              </div>
+            </div>
+
+            <div className={`flex justify-center pt-2 ${isScrolled ? 'text-slate-500' : 'text-slate-400'}`}>
               <a href="https://instagram.com/udientregasurgentes" target="_blank" rel="noopener noreferrer" className={`flex items-center gap-2 text-sm font-medium ${isScrolled ? 'hover:text-black' : 'hover:text-white'}`} aria-label="Instagram">
                 <InstagramIcon className="w-5 h-5 text-pink-400" />
                 <span>@udientregasurgentes</span>

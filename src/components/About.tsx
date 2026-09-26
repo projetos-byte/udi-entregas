@@ -18,7 +18,7 @@ const institutionalContent = [
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="bg-white py-20 sm:py-24">
+    <section id="about" className="bg-white pt-20 sm:pt-24 pb-20 sm:pb-28 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="space-y-6">
@@ -52,6 +52,17 @@ export const About: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Subtle, Low-Profile Downward Curve Divider to Section 4 (FAQ bg-slate-900) */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none z-20">
+        <svg
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          className="relative block w-full h-6 sm:h-9 lg:h-11 text-slate-900 fill-current"
+        >
+          <path d="M0,0 C400,45 800,45 1200,0 L1200,120 L0,120 Z" />
+        </svg>
       </div>
     </section>
   );

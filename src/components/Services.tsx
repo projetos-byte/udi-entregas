@@ -10,7 +10,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
   const whatsappPickupUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá! Gostaria de agendar uma coleta no meu endereço em Uberlândia/Região.')}`;
 
   return (
-    <section id="services" className="py-24 bg-slate-50 relative">
+    <section id="services" className="pt-20 sm:pt-24 pb-28 sm:pb-32 bg-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -156,6 +156,17 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
           </div>
         </div>
 
+      </div>
+
+      {/* Gentle Wave Shape Divider to Section 3 (About bg-white) */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none z-20">
+        <svg
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          className="relative block w-full h-8 sm:h-12 text-white fill-current"
+        >
+          <path d="M0,20 C200,70 400,0 600,45 C800,90 1000,15 1200,35 L1200,120 L0,120 Z" />
+        </svg>
       </div>
     </section>
   );

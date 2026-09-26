@@ -64,6 +64,17 @@ export const Hero: React.FC<HeroProps> = () => {
 
         </div>
       </div>
+
+      {/* Subtle, Low-Profile Concave Curve Transition to Section 2 (bg-slate-50) */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none z-20 pointer-events-none">
+        <svg
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          className="relative block w-full h-5 sm:h-8 lg:h-10 text-slate-50 fill-current"
+        >
+          <path d="M0,0 C380,45 820,45 1200,0 L1200,120 L0,120 Z" />
+        </svg>
+      </div>
     </section>
   );
 };

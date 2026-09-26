@@ -35,7 +35,7 @@ export const FAQ: React.FC = () => {
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá! Tenho algumas dúvidas sobre os envios e gostaria de falar com um Especialista da UDI Entregas.')}`;
 
   return (
-    <section id="faq" className="py-24 bg-slate-900 text-white relative">
+    <section id="faq" className="pt-20 sm:pt-24 pb-14 sm:pb-16 bg-slate-900 text-white relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
